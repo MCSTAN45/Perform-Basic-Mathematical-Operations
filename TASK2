@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""
+Task 2: Personalized Greeting
+Author: [Your Name]
+Date: October 2025
+Description: A Python program that creates a personalized greeting using user's first and last name.
+"""
+
+def personalized_greeting():
+    """
+    Function to create a personalized greeting using first and last name input from user.
+    Includes input validation and error handling.
+    """
+    print("=" * 50)
+    print("TASK 2: PERSONALIZED GREETING")
+    print("=" * 50)
+
+    try:
+        # Taking input from user
+        print("Please enter your name details:")
+        first_name = input("Enter your first name: ").strip()
+        last_name = input("Enter your last name: ").strip()
+
+        # Validate input (check if names are not empty)
+        if not first_name or not last_name:
+            print("Error: Both first name and last name are required!")
+            return
+
+        # Capitalize names for better presentation
+        first_name = first_name.capitalize()
+        last_name = last_name.capitalize()
+
+        # Concatenate first name and last name into full name
+        full_name = first_name + " " + last_name
+
+        print(f"\nName Details:")
+        print(f"First Name: {first_name}")
+        print(f"Last Name: {last_name}")
+        print(f"Full Name: {full_name}")
+        print("-" * 40)
+
+        # Create and display personalized greeting
+        greeting = f"Hello, {full_name}! Welcome to Python programming!"
+        print("PERSONALIZED GREETING:")
+        print(greeting)
+
+        # Additional greeting variations
+        print(f"\nNice to meet you, {first_name}!")
+        print(f"Have a great day, {full_name}!")
+
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+def main():
+    """Main function to run the program"""
+    while True:
+        personalized_greeting()
+
+        # Ask if user wants to create another greeting
+        choice = input("\nDo you want to create another greeting? (y/n): ").lower()
+        if choice != 'y' and choice != 'yes':
+            print("Thank you for using the greeting program!")
+            break
+        print()
+
+# Run the program
+if __name__ == "__main__":
+    main()
